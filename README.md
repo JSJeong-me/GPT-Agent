@@ -18,3 +18,5 @@ Agentic workflow
 5. **결과 반환 여부**: 도구의 결과를 사용자에게 직접 반환할지 여부를 지정합니다.
 
 이 정의는 에이전트가 다양한 도구와 효과적으로 상호작용할 수 있도록 하는데 필수적입니다.
+
+## [Default Tools](https://python.langchain.com/v0.1/docs/modules/tools/)
