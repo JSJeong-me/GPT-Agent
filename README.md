@@ -19,7 +19,7 @@ Agentic workflow
 
 이 정의는 에이전트가 다양한 도구와 효과적으로 상호작용할 수 있도록 하는데 필수적입니다.
 
-## [Default Tools](https://python.langchain.com/v0.1/docs/modules/tools/) (간단한 실습)
+## [Default Tools](https://python.langchain.com/v0.1/docs/modules/tools/) [간단한 실습](https://github.com/JSJeong-me/GPT-Agent/blob/main/00-WikiTools.ipynb)
 
 ## [다양한 Tools](https://python.langchain.com/v0.1/docs/integrations/tools/)   ex) [PassioAI](https://www.passio.ai/)
 
