@@ -1,4 +1,4 @@
-# GPT-Agent  [[실습파일]](https://docs.google.com/document/d/18b000S_9fnYCvJx_JBZUjULU1r7Fatx1c-mbZejOp-g/edit?usp=sharing)
+# GPT-Agent  [[교안(실습파일)]](https://docs.google.com/document/d/18b000S_9fnYCvJx_JBZUjULU1r7Fatx1c-mbZejOp-g/edit?usp=sharing)
 Agentic workflow
 
 
