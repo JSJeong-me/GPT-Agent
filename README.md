@@ -29,5 +29,6 @@ Agentic workflow
 
 ## correlation matrix
 ##
-![heat-map](https://github.com/JSJeong-me/GPT-Agent/assets/54794815/ad8a9c3e-f62e-45c0-9780-03cb05dd87b0)
+![correlation_heatmap](https://github.com/user-attachments/assets/c4122a7a-118b-4e05-81a8-0a570807f39d)
+
 
