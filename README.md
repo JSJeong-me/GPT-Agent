@@ -1,4 +1,4 @@
-# GPT-Agent  [[교안(실습파일)]](https://docs.google.com/document/d/18b000S_9fnYCvJx_JBZUjULU1r7Fatx1c-mbZejOp-g/edit?usp=sharing)  [[Paper]](https://drive.google.com/file/d/1YZIvoPfnxh6VM0FhfAgtXGMR9ItUs_xy/view?usp=sharing) [[Present]](https://drive.google.com/file/d/1dy2idNW5hnjMdTx-gGjJ2loz5d4wBLtO/view?usp=drive_link)  [[시연]](https://docs.google.com/document/d/18onUC5xRDF4xFcvLPqdoCWmewHxDW_MocazLxif1L4s/edit?usp=sharing)
+# GPT-Agent  [[교안(실습파일)]](https://docs.google.com/document/d/18b000S_9fnYCvJx_JBZUjULU1r7Fatx1c-mbZejOp-g/edit?usp=sharing)  [[Paper]](https://drive.google.com/file/d/1YZIvoPfnxh6VM0FhfAgtXGMR9ItUs_xy/view?usp=sharing) [[Present-mp4]](https://drive.google.com/file/d/1dy2idNW5hnjMdTx-gGjJ2loz5d4wBLtO/view?usp=drive_link) [[Present-pdf]](https://drive.google.com/file/d/14r-EvbFL3QbkyXP5nOubuaqP9a6gv_G0/view?usp=sharing) [[시연]](https://docs.google.com/document/d/18onUC5xRDF4xFcvLPqdoCWmewHxDW_MocazLxif1L4s/edit?usp=sharing)
 Agentic workflow 
 
 
