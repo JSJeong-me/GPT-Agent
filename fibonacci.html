@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>피보나치 수열 계산기</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Nanum Gothic", sans-serif;
+        margin: 0;
+        padding: 2rem;
+        background: radial-gradient(circle at top left, #f6f9fc, #dbe2ef 40%, #f9f7f7);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 18px 40px rgba(15, 31, 68, 0.18);
+        border-radius: 18px;
+        padding: 2.5rem 3rem;
+        max-width: 540px;
+        width: min(90vw, 540px);
+        backdrop-filter: blur(10px);
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.6rem);
+        margin-bottom: 1rem;
+        color: #233142;
+      }
+
+      p.description {
+        color: #455d7a;
+        line-height: 1.6;
+        margin-bottom: 1.8rem;
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      label {
+        font-weight: 600;
+        color: #233142;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(69, 93, 122, 0.2);
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      input[type="number"]:focus {
+        border-color: #455d7a;
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(69, 93, 122, 0.15);
+      }
+
+      button {
+        padding: 0.85rem 1.2rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: linear-gradient(135deg, #233142, #455d7a);
+        color: white;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(35, 49, 66, 0.25);
+      }
+
+      .result-card {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        border-radius: 14px;
+        background: rgba(69, 93, 122, 0.08);
+        color: #233142;
+        line-height: 1.8;
+        display: none;
+      }
+
+      .result-card.active {
+        display: block;
+      }
+
+      .sequence {
+        font-family: "JetBrains Mono", "Fira Code", monospace;
+        font-size: 0.95rem;
+        word-break: break-word;
+      }
+
+      .error {
+        color: #c44536;
+        font-weight: 600;
+        display: none;
+      }
+
+      .error.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>피보나치 수열 계산기</h1>
+      <p class="description">
+        원하는 항의 개수를 입력하고 <strong>피보나치(Fibonacci)</strong> 수열을 계산해 보세요.
+        0과 1에서 시작하여 이전 두 항의 합으로 다음 항이 결정되는 수열입니다.
+      </p>
+      <form id="fibonacci-form">
+        <label for="count">몇 개의 항을 계산할까요?</label>
+        <input
+          id="count"
+          name="count"
+          type="number"
+          min="1"
+          max="100"
+          placeholder="예: 10"
+          required
+        />
+        <p id="error" class="error">1 이상 100 이하의 정수를 입력하세요.</p>
+        <button type="submit">계산하기</button>
+      </form>
+      <section id="result" class="result-card" aria-live="polite"></section>
+    </main>
+
+    <script>
+      const form = document.querySelector('#fibonacci-form');
+      const countInput = document.querySelector('#count');
+      const resultSection = document.querySelector('#result');
+      const errorElement = document.querySelector('#error');
+
+      function calculateFibonacci(n) {
+        if (n === 1) return [0];
+        const sequence = [0, 1];
+        while (sequence.length < n) {
+          const nextValue = sequence.at(-1) + sequence.at(-2);
+          sequence.push(nextValue);
+        }
+        return sequence;
+      }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const count = Number.parseInt(countInput.value, 10);
+
+        if (!Number.isInteger(count) || count < 1 || count > 100) {
+          errorElement.classList.add('active');
+          resultSection.classList.remove('active');
+          resultSection.textContent = '';
+          return;
+        }
+
+        errorElement.classList.remove('active');
+        const sequence = calculateFibonacci(count);
+        const lastValue = sequence.at(-1);
+        resultSection.innerHTML = `
+          <h2>결과</h2>
+          <p>총 <strong>${count}</strong>개의 항을 계산했습니다.</p>
+          <p>마지막 항의 값은 <strong>${lastValue.toLocaleString('ko-KR')}</strong> 입니다.</p>
+          <div class="sequence" aria-label="피보나치 수열">${sequence
+            .map((value, index) => `${index + 1}번째: ${value}`)
+            .join('<br />')}</div>
+        `;
+        resultSection.classList.add('active');
+      });
+    </script>
+  </body>
+</html>
